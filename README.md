@@ -1,4 +1,4 @@
 # Covid-19
 
 
-covid-19 app design
+covid-19 android app design
