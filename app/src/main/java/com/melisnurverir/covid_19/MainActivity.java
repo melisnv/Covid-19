@@ -33,6 +33,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 flags.setImageResource(CountryData.countryFlags[spinner.getSelectedItemPosition()]);
+                final Intent intent;
+                switch (position){
+                    case 1:
+                        intent = new Intent(MainActivity.this,TurkeyData.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(MainActivity.this,GermanyData.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(MainActivity.this,ItalyData.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(MainActivity.this,FranceData.class);
+                        startActivity(intent);
+                        break;
+                    case 5:
+                        intent = new Intent(MainActivity.this,GreeceData.class);
+                        startActivity(intent);
+                        break;
+                }
+
+
             }
 
             @Override
