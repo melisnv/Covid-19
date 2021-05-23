@@ -8,12 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.melisnurverir.covid_19.model.DetailsArticle;
-
 public class ItalyData extends AppCompatActivity {
 
     ImageView back_btn;
-    TextView details_btn;
+    TextView details_btn,story_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +20,7 @@ public class ItalyData extends AppCompatActivity {
 
         back_btn = findViewById(R.id.back_btn);
         details_btn = findViewById(R.id.details_btn);
+        story_text = findViewById(R.id.story_text);
 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +36,15 @@ public class ItalyData extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(ItalyData.this, Articles.class);
                 startActivity(i);
+                finish();
+            }
+        });
+
+        story_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent storyIntent = new Intent(ItalyData.this, SignInStoryActivity.class);
+                startActivity(storyIntent);
                 finish();
             }
         });
