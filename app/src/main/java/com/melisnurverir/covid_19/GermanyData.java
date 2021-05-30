@@ -43,7 +43,7 @@ public class GermanyData extends AppCompatActivity {
         story_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent storyIntent = new Intent(GermanyData.this, SignInStoryActivity.class);
+                Intent storyIntent = new Intent(GermanyData.this, SignInUpActivity.class);
                 startActivity(storyIntent);
                 finish();
             }

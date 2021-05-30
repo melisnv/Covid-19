@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SignInStoryActivity extends AppCompatActivity {
+public class SignInUpActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     EditText email_text, password_text;
@@ -26,7 +26,7 @@ public class SignInStoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in_out);
+        setContentView(R.layout.activity_sign_in_up);
 
         firebaseAuth = FirebaseAuth.getInstance(); // initializing the FirebaseAuth instance
 
@@ -39,7 +39,7 @@ public class SignInStoryActivity extends AppCompatActivity {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
         if (firebaseUser != null){
-            Intent i = new Intent(SignInStoryActivity.this,ShareStoryActivity.class);
+            Intent i = new Intent(SignInUpActivity.this,ShareStoryActivity.class);
             startActivity(i);
             //finish();
         }
@@ -53,14 +53,14 @@ public class SignInStoryActivity extends AppCompatActivity {
         firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                Intent i = new Intent(SignInStoryActivity.this,ShareStoryActivity.class);
+                Intent i = new Intent(SignInUpActivity.this,ShareStoryActivity.class);
                 startActivity(i);
                 finish();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(SignInStoryActivity.this, e.getLocalizedMessage().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignInUpActivity.this, e.getLocalizedMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -78,8 +78,8 @@ public class SignInStoryActivity extends AppCompatActivity {
             firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                 @Override
                 public void onSuccess(AuthResult authResult) {
-                    Toast.makeText(SignInStoryActivity.this, "User Created", Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(SignInStoryActivity.this,ShareStoryActivity.class);
+                    Toast.makeText(SignInUpActivity.this, "User Created", Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(SignInUpActivity.this,ShareStoryActivity.class);
                     startActivity(i);
                     finish();
 
@@ -87,7 +87,7 @@ public class SignInStoryActivity extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(SignInStoryActivity.this,e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignInUpActivity.this,e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
                 }
             });
         }

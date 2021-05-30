@@ -43,7 +43,7 @@ public class ItalyData extends AppCompatActivity {
         story_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent storyIntent = new Intent(ItalyData.this, SignInStoryActivity.class);
+                Intent storyIntent = new Intent(ItalyData.this, SignInUpActivity.class);
                 startActivity(storyIntent);
                 finish();
             }

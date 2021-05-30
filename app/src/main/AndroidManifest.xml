@@ -3,6 +3,7 @@
     package="com.melisnurverir.covid_19">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -13,7 +14,7 @@
         android:theme="@style/Theme.Covid19">
         <activity android:name=".UploadActivity"></activity>
         <activity android:name=".ShareStoryActivity" />
-        <activity android:name=".SignInStoryActivity" />
+        <activity android:name=".SignInUpActivity" />
         <activity android:name=".Articles" />
         <activity android:name=".TurkeyData" />
         <activity android:name=".GreeceData" />
